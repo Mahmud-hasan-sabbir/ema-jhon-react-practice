@@ -8,3 +8,14 @@
  margin-right: 5px;
 
 }
+
+.cart-container{
+ width: 30%;
+ margin-left: 5px;
+ padding: 20px;
+ background-color: #f8f8f8;
+ border-radius: 8px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ font-family: Arial, sans-serif;
+ color: #333;
+}
