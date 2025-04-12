@@ -3,6 +3,7 @@ import './Shop.css';
 import fakeData from '../../fakeData/product';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
+import { addToDb } from '../../utilities/fakedb';
 
 const Shop = () => {
 
@@ -12,10 +13,17 @@ const Shop = () => {
   const [cart, setCart] = useState([]);
 
   const handleAddProduct = (product) => {
-    console.log(product);
+    // Update local state
     const newCart = [...cart, product];
     setCart(newCart);
-  }; 
+    
+    // Update localStorage
+    addToDb(product.id);
+    
+    // If you need to track quantity based on local state
+    const sameProductCount = newCart.filter(pd => pd.id === product.id).length;
+    console.log(`Product ${product.id} count: ${sameProductCount}`);
+  };
 
  
   return (
@@ -23,7 +31,7 @@ const Shop = () => {
      <div className="product-container">
      
       {
-        products.map(pd => <Product product={pd} addproduct = {handleAddProduct}></Product>)
+        products.map(pd => <Product showAddToCart={true} product={pd} addproduct = {handleAddProduct}></Product>)
       }
      
      </div>

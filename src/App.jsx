@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import Reveiw from './components/Reveiw/Reveiw';
 import Inventory from './components/Inventory/Inventory';
 import Notfound from './components/Notfound/Notfound';
+import ProductDetail from './components/ProductDetail/ProductDetail';
+
 
 function App() {
   
@@ -21,11 +23,13 @@ function App() {
       <Route path="/" element={<Shop />} />
       <Route path="/order" element={<Reveiw />} />
       <Route path="/manage" element={<Inventory />} />
+      <Route path="/product/:productkey" element={<ProductDetail />} />
       <Route path="*" element={<Notfound />} />
       
     </Routes>
   </BrowserRouter>
-      
+ 
+
         
       </div>
      
