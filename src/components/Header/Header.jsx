@@ -14,6 +14,7 @@ const Header = () => {
           <a href="/shop">Shop</a>
           <a href="/order">Order Review</a>
           <a href="/manage">Manage Inventory</a>
+          <a href="/bootstrap">React Bootstap</a>
           </nav>
        </div>
 
